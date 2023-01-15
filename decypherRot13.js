@@ -17,11 +17,11 @@ function rot13(str) {
  */
 function decode(c) {
     // We get length and the index of the current character
-    var len = ab.length;
-    var index = ab.indexOf(c);
+    const len = ab.length;
+    let index = ab.indexOf(c);
 
     // If the index minus the encoding is still bigger than 0
-    var npos = index - ec;
+    let npos = index - ec;
     if (npos >= 0) {
         // We simply return the new character
         return ab[npos];
@@ -30,3 +30,8 @@ function decode(c) {
     // Otherwise we calculate the new character from the end
     return ab[len + npos];
 }
+
+// Examples of execution
+console.log(rot13("SERR PBQR PNZC"));
+console.log(rot13("SERR CVMMN"));
+console.log(rot13("SERR 456"));
